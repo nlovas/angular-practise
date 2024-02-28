@@ -1,0 +1,5 @@
+<div class="item-wrapper">
+    <input #taskName class="task-input" type="text" placeholder="Add a task"/>
+    <button [ngClass]="{'has-task': taskAdded === true}" class="add-btn" (click)="addTask()">Add</button>
+    <button [ngClass]="{'has-task': taskAdded === false}" class="">Remove</button>
+</div>
