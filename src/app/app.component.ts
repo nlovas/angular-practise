@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TaskEventService } from './services/task-event-service/task-event-service.service';
 import { NgFor } from '@angular/common';
+import { Task } from './task';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import { NgFor } from '@angular/common';
 })
 export class AppComponent {
   constructor(private taskEventService: TaskEventService){}
-  tasks: Array<string> = [];
+  tasks: Array<Task> = [];
+  id:number=0;
 
   ngOnInit(){
     this.taskEventService.addTaskListener().subscribe(value => {
@@ -21,7 +23,7 @@ export class AppComponent {
         return;
       }
       console.log(value);
-      this.tasks.push(value);
+      this.tasks.push({'value': value, 'id': this.id++});
     })
   }
 }

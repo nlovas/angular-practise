@@ -1,5 +1,6 @@
 <div class="sidebar">
     <!-- an empty one at the top for the user to enter a new item -->
-    <app-sidebar-item></app-sidebar-item> <!-- (taskAddedEvent)="addItem($event)"-->
+    <app-sidebar-item></app-sidebar-item>
+    <app-sidebar-item *ngFor="let task of tasks; index as i; trackBy: trackByFn"></app-sidebar-item> <!-- (taskAddedEvent)="addItem($event)"-->
     <button>Clear All Tasks</button>
 </div>
