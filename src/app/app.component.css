@@ -1,4 +1,15 @@
 .content{
     display: flex;
     flex-direction: row;
+    width:100%;
+}
+
+.left-side{
+    flex-basis: 60%;
+    margin: 2rem;
+}
+
+.right-side{
+    flex-basis: 40%;
+    margin: 2rem;
 }

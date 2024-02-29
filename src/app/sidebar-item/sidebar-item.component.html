@@ -1,5 +1,7 @@
 <div class="item-wrapper">
-    <input #taskName class="task-input" type="text" placeholder="Add a task"/>
-    <button [ngClass]="{'has-task': taskAdded === true}" class="add-btn" (click)="addTask()">Add</button>
+    <input *ngIf="!taskAdded" [(ngModel)]="taskName" class="task-input" type="text" placeholder="Add a task"/> <!-- #taskNameElement-->
+    <div *ngIf="taskAdded">{{taskName}}</div>
+    <button [ngClass]="{'has-task': taskAdded === true}" class="add-btn" (click)="addTask()">Add</button><!--addTask(taskNameElement.value)-->
+    <button [ngClass]="{'has-task': taskAdded === false}" class="">Edit</button>
     <button [ngClass]="{'has-task': taskAdded === false}" class="">Remove</button>
 </div>
