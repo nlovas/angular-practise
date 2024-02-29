@@ -8,7 +8,7 @@
 
       <div class="task-list-wrapper">
         <ul class="task-list">
-          <li *ngFor="let task of tasks; index as i">{{task.value}}</li> <!--TODO: trackby function-->
+          <li *ngFor="let task of tasks; index as i; trackBy: trackByFn">{{task.value}}</li> <!--TODO: trackby function-->
         </ul>
       </div>
       <button [disabled]="tasks.length === 0" >Randomize</button>

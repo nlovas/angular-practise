@@ -26,4 +26,8 @@ export class AppComponent {
       this.tasks.push({'value': value, 'id': this.id++});
     })
   }
+
+  trackByFn (task:any) {
+    return task.id;
+  }
 }

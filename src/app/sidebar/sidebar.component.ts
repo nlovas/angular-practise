@@ -14,7 +14,7 @@ import { Task } from '../task';
 })
 export class SidebarComponent {
  // constructor(private taskEventService: TaskEventService){}
-  @Input() tasks = [];
+  @Input() tasks: Task[] = [];
   //tasks:Array<Object> = new Array<Object>(); // will add more attributes to it later
 
   trackByFn (task:any) {
